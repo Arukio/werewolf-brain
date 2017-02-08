@@ -2,6 +2,7 @@ const cards = require('./src/cards');
 const decks = require('./src/decks');
 const moderator = require('./src/moderator');
 const game = require('./src/game');
+const translations = require('./data/translations');
 
 function getAllCards() {
     return cards.getAll();
@@ -25,6 +26,11 @@ function getChaosGameFromDeck(players, deckName) {
     return game.create(players, chosenCards, game.mode.CHAOS);
 }
 
+function languages() {
+    return Object.keys(translations);
+}
+
+exports.languages = languages;
 exports.getAllCards = getAllCards;
 exports.getAllDecks = decks.getAll;
 exports.getScriptFromDeck = moderator.getScriptFromDeck;
