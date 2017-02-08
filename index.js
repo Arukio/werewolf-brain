@@ -26,11 +26,16 @@ function getChaosGameFromDeck(players, deckName) {
     return game.create(players, chosenCards, game.mode.CHAOS);
 }
 
-function languages() {
+function getAvailableLanguages() {
     return Object.keys(translations);
 }
 
-exports.languages = languages;
+function getLanguage(languageKey) {
+    return translations[languageKey];
+}
+
+exports.getLanguage = getLanguage;
+exports.getAvailableLanguages = getAvailableLanguages;
 exports.getAllCards = getAllCards;
 exports.getAllDecks = decks.getAll;
 exports.getScriptFromDeck = moderator.getScriptFromDeck;
